@@ -1,107 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Paula Simões Cabeleireiro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <title>Paula Simões · Cabeleireiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <div class="logo">Paula Simões <span>Cabeleireiro</span></div>
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#reviews">Testemunhos</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-        <li><a href="#marcacao" class="btn-nav">Marcar</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  <!-- NAVBAR -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <span class="brand-name">Paula Simões</span>
+        <span class="brand-sub">Cabeleireiro</span>
+      </a>
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#opiniones">Opiniões</a>
+        <a href="#marcacao" class="nav-cta">Marcar Agora</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </nav>
+  </header>
 
   <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="hero-overlay"></div>
+  <section class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-sub">Bem-vinda ao</p>
-      <h1>Paula Simões<br/><span>Cabeleireiro</span></h1>
-      <p class="hero-desc">Transformamos o teu cabelo com arte, cuidado e paixão</p>
-      <a href="#marcacao" class="btn-hero">Marcar Consulta</a>
+      <p class="eyebrow">Cabeleireiro · Coimbra</p>
+      <h1>O seu cabelo,<br/><em>a nossa arte</em></h1>
+      <p class="hero-lead">Profissionais apaixonadas que transformam o seu cabelo com técnica, cuidado e dedicação exclusiva a cada cliente.</p>
+      <div class="hero-actions">
+        <a href="#marcacao" class="btn-primary">Marcar Consulta</a>
+        <a href="#galeria" class="btn-ghost">Ver Trabalhos</a>
+      </div>
     </div>
-    <div class="hero-scroll"><i class="fas fa-chevron-down"></i></div>
+    <div class="hero-stats">
+      <div class="stat"><strong>500+</strong><span>Clientes</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>10+</strong><span>Anos</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>4.9★</strong><span>Google</span></div>
+    </div>
   </section>
 
   <!-- SOBRE -->
-  <section id="sobre" class="sobre">
-    <div class="container sobre-grid">
-      <div class="sobre-img">
-        <div class="sobre-img-frame">
-          <img src="foto1.jpg" alt="Trabalho Paula Simões" onerror="this.style.background='linear-gradient(135deg,#c9a96e,#8b6914)';this.alt=''"/>
-          <div class="sobre-badge"><span>+10</span><small>anos de experiência</small></div>
+  <section class="sobre">
+    <div class="wrap sobre-wrap">
+      <div class="sobre-media">
+        <div class="img-stack">
+          <div class="img-card img-card--back">
+            <img src="foto2.jpg" alt="Trabalho" onerror="this.parentElement.classList.add('placeholder-brown')"/>
+          </div>
+          <div class="img-card img-card--front">
+            <img src="foto1.jpg" alt="Balayage" onerror="this.parentElement.classList.add('placeholder-gold')"/>
+          </div>
         </div>
       </div>
-      <div class="sobre-texto">
-        <p class="section-label">Sobre nós</p>
-        <h2>Arte & Paixão<br/>no seu cabelo</h2>
-        <p>No <strong>Paula Simões Cabeleireiro</strong> acreditamos que cada cabelo conta uma história. A nossa equipa de profissionais especializadas dedica-se a realçar a beleza única de cada cliente, com técnicas modernas e produtos de alta qualidade.</p>
-        <p>Somos reconhecidas pela simpatia, profissionalismo e resultados que superam as expectativas — com clientes que percorrem mais de 100km para nos visitar.</p>
-        <div class="sobre-stats">
-          <div><strong>500+</strong><span>Clientes satisfeitas</span></div>
-          <div><strong>10+</strong><span>Anos de experiência</span></div>
-          <div><strong>5★</strong><span>Avaliação Google</span></div>
-        </div>
+      <div class="sobre-text">
+        <p class="label">Sobre nós</p>
+        <h2>Mais de uma década<br/>de excelência</h2>
+        <p>No Paula Simões Cabeleireiro cada visita é uma experiência personalizada. A <strong>Andreia</strong> e a sua equipa dedicam-se a entender a personalidade e o estilo de vida de cada cliente para entregar resultados que superam as expectativas.</p>
+        <p>Temos clientes que percorrem mais de <strong>100 km</strong> para nos visitar — isso diz tudo sobre a confiança que depositam em nós.</p>
+        <a href="#marcacao" class="btn-primary">Agendar visita</a>
       </div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
   <section id="servicos" class="servicos">
-    <div class="container">
-      <p class="section-label center">O que oferecemos</p>
-      <h2 class="center">Os Nossos Serviços</h2>
+    <div class="wrap">
+      <div class="section-header">
+        <p class="label">O que fazemos</p>
+        <h2>Serviços</h2>
+      </div>
       <div class="servicos-grid">
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-cut"></i></div>
+        <div class="servico">
+          <div class="servico-num">01</div>
           <h3>Corte</h3>
-          <p>Corte personalizado adaptado ao formato do rosto e estilo de vida</p>
-          <span class="preco">a partir de €20</span>
+          <p>Corte personalizado ao formato do rosto e estilo de vida, com acabamento profissional.</p>
+          <span class="tag">a partir de €20</span>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-palette"></i></div>
-          <h3>Coloração</h3>
-          <p>Coloração capilar com técnicas modernas — babylights, balayage, ombré</p>
-          <span class="preco">a partir de €45</span>
+        <div class="servico">
+          <div class="servico-num">02</div>
+          <h3>Coloração &amp; Balayage</h3>
+          <p>Babylights, balayage, ombré e coloração total com as melhores marcas do mercado.</p>
+          <span class="tag">a partir de €45</span>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-wind"></i></div>
+        <div class="servico">
+          <div class="servico-num">03</div>
           <h3>Brushing</h3>
-          <p>Brushing profissional para um acabamento perfeito e duradouro</p>
-          <span class="preco">a partir de €18</span>
+          <p>Secagem e brushing profissional para um volume e brilho que dura dias.</p>
+          <span class="tag">a partir de €18</span>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-spa"></i></div>
-          <h3>Tratamentos</h3>
-          <p>Keratina, alisamento, hidratação profunda e reconstrução capilar</p>
-          <span class="preco">a partir de €60</span>
+        <div class="servico">
+          <div class="servico-num">04</div>
+          <h3>Keratina &amp; Alisamento</h3>
+          <p>Tratamentos alisantes e de keratina para um cabelo liso, nutrido e sem frizz.</p>
+          <span class="tag">a partir de €60</span>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-star"></i></div>
+        <div class="servico">
+          <div class="servico-num">05</div>
           <h3>Penteados</h3>
-          <p>Penteados para noiva, festas e ocasiões especiais</p>
-          <span class="preco">a partir de €35</span>
+          <p>Penteados para noivas, formaturas, festas e ocasiões especiais.</p>
+          <span class="tag">a partir de €35</span>
         </div>
-        <div class="servico-card">
-          <div class="servico-icon"><i class="fas fa-magic"></i></div>
-          <h3>Extensões</h3>
-          <p>Extensões capilares naturais para volume e comprimento</p>
-          <span class="preco">a partir de €120</span>
+        <div class="servico">
+          <div class="servico-num">06</div>
+          <h3>Hidratação &amp; Tratamentos</h3>
+          <p>Reconstrução capilar, hidratação profunda e tratamentos para cabelos danificados.</p>
+          <span class="tag">a partir de €30</span>
         </div>
       </div>
     </div>
@@ -109,73 +123,120 @@
 
   <!-- GALERIA -->
   <section id="galeria" class="galeria">
-    <div class="container">
-      <p class="section-label center">Os nossos trabalhos</p>
-      <h2 class="center">Galeria</h2>
-      <div class="galeria-grid">
-        <div class="galeria-item tall">
-          <img src="foto1.jpg" alt="Balayage loiro" onerror="this.parentElement.style.background='linear-gradient(135deg,#d4a96e,#8b6914)'"/>
-          <div class="galeria-overlay"><span>Balayage</span></div>
+    <div class="wrap">
+      <div class="section-header">
+        <p class="label">Os nossos trabalhos</p>
+        <h2>Galeria</h2>
+      </div>
+    </div>
+    <div class="galeria-full">
+      <div class="galeria-item gi-large">
+        <img src="foto1.jpg" alt="Balayage loiro" onerror="this.parentElement.classList.add('ph-gold')"/>
+        <div class="gi-caption">Balayage &amp; Ondas</div>
+      </div>
+      <div class="galeria-col">
+        <div class="galeria-item">
+          <img src="foto2.jpg" alt="Castanho natural" onerror="this.parentElement.classList.add('ph-brown')"/>
+          <div class="gi-caption">Coloração Natural</div>
         </div>
         <div class="galeria-item">
-          <img src="foto2.jpg" alt="Cor castanha" onerror="this.parentElement.style.background='linear-gradient(135deg,#8b6914,#5c3d0e)'"/>
-          <div class="galeria-overlay"><span>Coloração Castanha</span></div>
+          <img src="foto1.jpg" alt="Ondas" onerror="this.parentElement.classList.add('ph-caramel')"/>
+          <div class="gi-caption">Ondas Naturais</div>
+        </div>
+      </div>
+      <div class="galeria-col">
+        <div class="galeria-item">
+          <img src="foto2.jpg" alt="Keratina" onerror="this.parentElement.classList.add('ph-mocha')"/>
+          <div class="gi-caption">Keratina</div>
         </div>
         <div class="galeria-item">
-          <img src="foto1.jpg" alt="Ondas naturais" onerror="this.parentElement.style.background='linear-gradient(135deg,#c9a96e,#a07840)'"/>
-          <div class="galeria-overlay"><span>Ondas Naturais</span></div>
-        </div>
-        <div class="galeria-item">
-          <img src="foto2.jpg" alt="Tratamento" onerror="this.parentElement.style.background='linear-gradient(135deg,#7d5a3c,#4a2c0e)'"/>
-          <div class="galeria-overlay"><span>Tratamento Keratina</span></div>
-        </div>
-        <div class="galeria-item tall">
-          <img src="foto1.jpg" alt="Ombré" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8c97e,#c9a040)'"/>
-          <div class="galeria-overlay"><span>Ombré Hair</span></div>
+          <img src="foto1.jpg" alt="Corte" onerror="this.parentElement.classList.add('ph-gold')"/>
+          <div class="gi-caption">Corte &amp; Cor</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section id="reviews" class="reviews">
-    <div class="container">
-      <p class="section-label center">O que dizem de nós</p>
-      <h2 class="center">Testemunhos</h2>
-      <div class="stars-total">
-        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <strong>4.9</strong><span>/ 5 no Google</span>
+  <!-- OPINIÕES -->
+  <section id="opiniones" class="opiniones">
+    <div class="wrap">
+      <div class="section-header">
+        <p class="label">O que dizem de nós</p>
+        <h2>Opiniões reais<br/>de clientes reais</h2>
+        <div class="rating-badge">
+          <span class="rating-num">4.9</span>
+          <div>
+            <div class="stars">★★★★★</div>
+            <small>no Google Maps</small>
+          </div>
+        </div>
       </div>
+
       <div class="reviews-grid">
-        <div class="review-card featured">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Pela primeira vez fui a este estabelecimento e posso dizer que fiquei super feliz com o resultado final! São umas queridas a atender. Ficou um corte lindo, lindo, obrigada Andreia!"</p>
-          <div class="review-author"><div class="avatar">M</div><div><strong>Mariana Silva</strong><small>há 1 semana</small></div></div>
+        <div class="review review--highlight">
+          <p class="review-text">"Pela primeira vez fui a este estabelecimento e posso dizer que fiquei <strong>super feliz com o resultado</strong>! São umas queridas a atender. Ficou um corte lindo, lindo — obrigada Andreia!"</p>
+          <div class="review-footer">
+            <div class="avatar">M</div>
+            <div>
+              <strong>Mariana Silva</strong>
+              <small>há 1 semana · ★★★★★</small>
+            </div>
+          </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Nunca fui mal atendida. São excelentes profissionais e de uma simpatia extraordinária. Faço quase 100km de cada vez — são as únicas em quem confio inteiramente."</p>
-          <div class="review-author"><div class="avatar">A</div><div><strong>Ana Sofia Secco</strong><small>Guia Local · há 1 ano</small></div></div>
+
+        <div class="review">
+          <p class="review-text">"Nunca fui mal atendida. São excelentes profissionais e de uma simpatia extraordinária. Faço quase <strong>100 km</strong> de cada vez — são as únicas em quem confio inteiramente."</p>
+          <div class="review-footer">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Ana Sofia Secco</strong>
+              <small>Guia Local · ★★★★★</small>
+            </div>
+          </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Primeira vez que fui. Funcionárias muito simpáticas e atenciosas. Fui atendida pela Andreia, que me tratou com muita simpatia e profissionalismo."</p>
-          <div class="review-author"><div class="avatar">L</div><div><strong>Luísa Couto</strong><small>Guia Local · há 3 anos</small></div></div>
+
+        <div class="review">
+          <p class="review-text">"Funcionárias muito simpáticas e atenciosas. A Andreia tratou-me com muita simpatia e profissionalismo. Voltarei com certeza!"</p>
+          <div class="review-footer">
+            <div class="avatar">L</div>
+            <div>
+              <strong>Luísa Couto</strong>
+              <small>Guia Local · ★★★★★</small>
+            </div>
+          </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Muito simpática e comunicativa, o corte ficou tal e qual como queria."</p>
-          <div class="review-author"><div class="avatar">M</div><div><strong>Miguel Tobback</strong><small>há 2 anos</small></div></div>
+
+        <div class="review">
+          <p class="review-text">"Muito simpática e comunicativa. O corte ficou <strong>tal e qual como queria</strong>."</p>
+          <div class="review-footer">
+            <div class="avatar">M</div>
+            <div>
+              <strong>Miguel Tobback</strong>
+              <small>há 2 anos · ★★★★★</small>
+            </div>
+          </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Local agradável, profissionais corteses e serviços de qualidade."</p>
-          <div class="review-author"><div class="avatar">V</div><div><strong>Valcilene Batista</strong><small>há 7 anos</small></div></div>
+
+        <div class="review">
+          <p class="review-text">"Local agradável, profissionais corteses e serviços de qualidade. Recomendo a toda a gente!"</p>
+          <div class="review-footer">
+            <div class="avatar">V</div>
+            <div>
+              <strong>Valcilene Batista</strong>
+              <small>há 7 anos · ★★★★★</small>
+            </div>
+          </div>
         </div>
-        <div class="review-card">
-          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Cabeleireiro excelente. Boas profissionais! Preço justo e bom trabalho."</p>
-          <div class="review-author"><div class="avatar">F</div><div><strong>Fernanda Pastoria</strong><small>Guia Local · há 3 anos</small></div></div>
+
+        <div class="review">
+          <p class="review-text">"Cabeleireiro excelente. Boas profissionais! Preço justo e bom trabalho."</p>
+          <div class="review-footer">
+            <div class="avatar">F</div>
+            <div>
+              <strong>Fernanda Pastoria</strong>
+              <small>Guia Local · ★★★★★</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -183,75 +244,74 @@
 
   <!-- MARCAÇÃO -->
   <section id="marcacao" class="marcacao">
-    <div class="container marcacao-grid">
-      <div class="marcacao-info">
-        <p class="section-label">Reservas</p>
+    <div class="wrap marcacao-wrap">
+      <div class="marcacao-left">
+        <p class="label label--light">Reservas</p>
         <h2>Marque a sua<br/>consulta</h2>
-        <p>Escolha o serviço, a data e o horário que mais lhe convém. Confirmamos a sua marcação por SMS ou WhatsApp.</p>
-        <div class="contact-items">
-          <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Telefone</strong><span>239 716 898</span></div></div>
-          <div class="contact-item"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><span>963 963 028</span></div></div>
-          <div class="contact-item"><i class="fas fa-clock"></i><div><strong>Horário</strong><span>Seg–Sex: 9h–20h | Sáb: 9h–19h</span></div></div>
+        <p>Preencha o formulário e entraremos em contacto para confirmar a data e hora. Rápido e sem complicações.</p>
+        <div class="contactos">
+          <a href="tel:239716898" class="contacto-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.07 2.18 2 2 0 012.06 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            239 716 898
+          </a>
+          <a href="https://wa.me/351963963028" target="_blank" class="contacto-btn contacto-btn--wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="horario">
+          <p><strong>Seg – Sex</strong> · 9h às 20h</p>
+          <p><strong>Sábado</strong> · 9h às 19h</p>
+          <p><strong>Domingo</strong> · Fechado</p>
         </div>
       </div>
-      <div class="marcacao-form-wrap">
-        <form id="formMarcacao" class="marcacao-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Nome completo</label>
-              <input type="text" placeholder="O seu nome" required/>
-            </div>
-            <div class="form-group">
-              <label>Telefone / WhatsApp</label>
-              <input type="tel" placeholder="9XX XXX XXX" required/>
-            </div>
+
+      <div class="marcacao-right">
+        <form id="bookingForm" class="booking-form">
+          <h3>Pedido de marcação</h3>
+
+          <div class="field">
+            <label>O seu nome</label>
+            <input type="text" name="nome" placeholder="Nome completo" required/>
           </div>
-          <div class="form-group">
-            <label>Serviço</label>
-            <select required>
-              <option value="">Selecione um serviço</option>
-              <option>Corte</option>
-              <option>Coloração / Balayage</option>
-              <option>Brushing</option>
-              <option>Tratamento de Keratina</option>
-              <option>Penteado para festa / noiva</option>
-              <option>Extensões capilares</option>
-              <option>Corte + Coloração</option>
-              <option>Outro (especificar nas observações)</option>
-            </select>
+
+          <div class="field">
+            <label>Telefone / WhatsApp</label>
+            <input type="tel" name="telefone" placeholder="9XX XXX XXX" required/>
           </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label>Data pretendida</label>
-              <input type="date" id="dataInput" required/>
+
+          <div class="field">
+            <label>Serviço pretendido</label>
+            <div class="services-picker" id="servicesPicker">
+              <button type="button" class="service-chip" data-service="Corte">Corte</button>
+              <button type="button" class="service-chip" data-service="Coloração">Coloração</button>
+              <button type="button" class="service-chip" data-service="Balayage">Balayage</button>
+              <button type="button" class="service-chip" data-service="Brushing">Brushing</button>
+              <button type="button" class="service-chip" data-service="Keratina">Keratina</button>
+              <button type="button" class="service-chip" data-service="Penteado">Penteado</button>
+              <button type="button" class="service-chip" data-service="Hidratação">Hidratação</button>
+              <button type="button" class="service-chip" data-service="Outro">Outro</button>
             </div>
-            <div class="form-group">
-              <label>Horário</label>
-              <select id="horaInput" required>
-                <option value="">Selecione</option>
-                <option>09:00</option><option>09:30</option>
-                <option>10:00</option><option>10:30</option>
-                <option>11:00</option><option>11:30</option>
-                <option>12:00</option><option>14:00</option>
-                <option>14:30</option><option>15:00</option>
-                <option>15:30</option><option>16:00</option>
-                <option>16:30</option><option>17:00</option>
-                <option>17:30</option><option>18:00</option>
-                <option>18:30</option><option>19:00</option>
-                <option>19:30</option>
-              </select>
-            </div>
+            <input type="hidden" name="servico" id="servicoHidden"/>
           </div>
-          <div class="form-group">
-            <label>Observações (opcional)</label>
-            <textarea placeholder="Descreva o que pretende, envie inspirações, etc." rows="3"></textarea>
+
+          <div class="field">
+            <label>Quando prefere? <span class="optional">(opcional)</span></label>
+            <input type="date" name="data" id="dataField"/>
           </div>
-          <button type="submit" class="btn-submit">Enviar Pedido de Marcação <i class="fas fa-arrow-right"></i></button>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            Enviar pedido
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">Entraremos em contacto em até 2 horas para confirmar.</p>
         </form>
-        <div id="successMsg" class="success-msg" style="display:none">
-          <i class="fas fa-check-circle"></i>
+
+        <div class="booking-success" id="bookingSuccess">
+          <div class="success-icon">✓</div>
           <h3>Pedido enviado!</h3>
-          <p>Entraremos em contacto em breve para confirmar a sua marcação.</p>
+          <p>Obrigada pelo contacto. Entraremos em contacto brevemente para confirmar a sua marcação.</p>
+          <a href="tel:239716898" class="btn-primary">Ligar agora</a>
         </div>
       </div>
     </div>
@@ -259,64 +319,77 @@
 
   <!-- LOCALIZAÇÃO -->
   <section id="localizacao" class="localizacao">
-    <div class="container">
-      <p class="section-label center">Onde estamos</p>
-      <h2 class="center">Localização</h2>
-      <div class="loc-grid">
-        <div class="loc-info">
-          <div class="loc-item"><i class="fas fa-map-marker-alt"></i><div><strong>Morada</strong><span>Rua Principal, nº 45<br/>3000 Coimbra</span></div></div>
-          <div class="loc-item"><i class="fas fa-car"></i><div><strong>Estacionamento</strong><span>Estacionamento gratuito disponível em frente</span></div></div>
-          <div class="loc-item"><i class="fas fa-clock"></i><div><strong>Horário</strong><span>Segunda a Sexta: 9h – 20h<br/>Sábado: 9h – 19h<br/>Domingo: Fechado</span></div></div>
-          <div class="loc-item"><i class="fas fa-phone"></i><div><strong>Contactos</strong><span>239 716 898<br/>963 963 028</span></div></div>
-          <a href="https://maps.google.com" target="_blank" class="btn-mapa"><i class="fas fa-directions"></i> Como chegar</a>
+    <div class="wrap loc-wrap">
+      <div class="loc-info">
+        <p class="label">Como chegar</p>
+        <h2>Localização</h2>
+        <div class="loc-items">
+          <div class="loc-item">
+            <div class="loc-icon">📍</div>
+            <div>
+              <strong>Morada</strong>
+              <span>Rua Principal, nº 45<br/>3000 Coimbra</span>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">🕐</div>
+            <div>
+              <strong>Horário</strong>
+              <span>Seg–Sex: 9h–20h<br/>Sáb: 9h–19h · Dom: Fechado</span>
+            </div>
+          </div>
+          <div class="loc-item">
+            <div class="loc-icon">📞</div>
+            <div>
+              <strong>Contacto</strong>
+              <span>239 716 898<br/>963 963 028</span>
+            </div>
+          </div>
         </div>
-        <div class="mapa-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12112.!2d-8.4291!3d40.2033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f9272a4c3d%3A0x500!2sCoimbra!5e0!3m2!1spt!2spt!4v1"
-            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
+        <a href="https://maps.google.com" target="_blank" class="btn-primary">Abrir no Google Maps</a>
+      </div>
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24224!2d-8.4291!3d40.2033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd22f927!2sCoimbra%2C+Portugal!5e0!3m2!1spt!2spt!4v1" width="100%" height="100%" style="border:0" allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer-inner">
+    <div class="wrap footer-wrap">
       <div class="footer-brand">
-        <div class="logo">Paula Simões <span>Cabeleireiro</span></div>
-        <p>Arte e paixão no seu cabelo, desde sempre.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
+        <span class="brand-name">Paula Simões</span>
+        <span class="brand-sub">Cabeleireiro</span>
+        <p>Arte e paixão no seu cabelo.</p>
       </div>
-      <div class="footer-links">
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#reviews">Testemunhos</a></li>
-          <li><a href="#marcacao">Marcações</a></li>
-        </ul>
+      <div class="footer-nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#opiniones">Opiniões</a>
+        <a href="#marcacao">Marcações</a>
+        <a href="#localizacao">Localização</a>
       </div>
-      <div class="footer-contact">
-        <h4>Contacto</h4>
-        <p><i class="fas fa-phone"></i> 239 716 898</p>
-        <p><i class="fab fa-whatsapp"></i> 963 963 028</p>
-        <p><i class="fas fa-map-marker-alt"></i> Rua Principal, nº 45, Coimbra</p>
-        <p><i class="fas fa-clock"></i> Seg–Sex: 9h–20h | Sáb: 9h–19h</p>
+      <div class="footer-social">
+        <a href="https://instagram.com/cabeleireiropaulasimoes" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        </a>
+        <a href="https://facebook.com/CabeleireiroPaulaSimoes" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://wa.me/351963963028" target="_blank" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Paula Simões Cabeleireiro · Todos os direitos reservados</p>
+      <p>© 2026 Paula Simões Cabeleireiro · Coimbra · Todos os direitos reservados</p>
     </div>
   </footer>
 
-  <a href="#marcacao" class="fab-btn"><i class="fas fa-calendar-check"></i></a>
+  <!-- FAB WhatsApp -->
+  <a href="https://wa.me/351963963028?text=Olá!%20Gostaria%20de%20marcar%20uma%20consulta." target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
 
   <script src="script.js"></script>
 </body>

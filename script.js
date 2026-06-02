@@ -1,60 +1,72 @@
-// Navbar scroll effect
-const navbar = document.getElementById('navbar');
+// ── Navbar scroll ──────────────────────────────
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
+  header.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── Mobile menu ────────────────────────────────
+const toggle = document.getElementById('menuToggle');
+const nav = document.querySelector('.nav');
+toggle?.addEventListener('click', () => nav.classList.toggle('mobile-open'));
+document.querySelectorAll('.nav a').forEach(a => {
+  a.addEventListener('click', () => nav.classList.remove('mobile-open'));
 });
 
-// Hamburger menu
-document.getElementById('hamburger').addEventListener('click', () => {
-  document.querySelector('.nav-links').classList.toggle('open');
-});
-
-// Close menu on link click
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => document.querySelector('.nav-links').classList.remove('open'));
-});
-
-// Set min date to today
-const dataInput = document.getElementById('dataInput');
-if (dataInput) {
-  const today = new Date().toISOString().split('T')[0];
-  dataInput.min = today;
-  dataInput.value = today;
+// ── Min date ───────────────────────────────────
+const dateField = document.getElementById('dataField');
+if (dateField) {
+  const today = new Date();
+  // skip Sunday
+  if (today.getDay() === 0) today.setDate(today.getDate() + 1);
+  dateField.min = today.toISOString().split('T')[0];
+  dateField.addEventListener('change', () => {
+    const d = new Date(dateField.value + 'T12:00:00');
+    if (d.getDay() === 0) {
+      dateField.setCustomValidity('Fechado ao domingo — escolha outro dia.');
+      dateField.reportValidity();
+    } else {
+      dateField.setCustomValidity('');
+    }
+  });
 }
 
-// Disable Sundays
-dataInput?.addEventListener('input', () => {
-  const d = new Date(dataInput.value);
-  if (d.getUTCDay() === 0) {
-    dataInput.setCustomValidity('Estamos fechados ao domingo. Por favor escolha outro dia.');
-    dataInput.reportValidity();
-  } else {
-    dataInput.setCustomValidity('');
-  }
+// ── Service chips ──────────────────────────────
+document.querySelectorAll('.service-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.service-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    document.getElementById('servicoHidden').value = chip.dataset.service;
+  });
 });
 
-// Form submit
-document.getElementById('formMarcacao')?.addEventListener('submit', (e) => {
+// ── Form submit ────────────────────────────────
+document.getElementById('bookingForm')?.addEventListener('submit', (e) => {
   e.preventDefault();
-  document.getElementById('formMarcacao').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
+  const form = e.target;
+  form.style.opacity = '0';
+  form.style.transform = 'scale(0.97)';
+  form.style.transition = 'all .3s';
+  setTimeout(() => {
+    form.style.display = 'none';
+    const success = document.getElementById('bookingSuccess');
+    success.style.display = 'block';
+    success.style.opacity = '0';
+    setTimeout(() => { success.style.opacity = '1'; success.style.transition = 'opacity .4s'; }, 10);
+  }, 300);
 });
 
-// Smooth reveal on scroll
+// ── Scroll reveal ──────────────────────────────
+const revealEls = document.querySelectorAll(
+  '.servico, .review, .galeria-item, .loc-item, .sobre-text, .sobre-media, .marcacao-left, .marcacao-right'
+);
+revealEls.forEach((el, i) => {
+  el.classList.add('reveal');
+  if (i % 3 === 1) el.classList.add('reveal-delay-1');
+  if (i % 3 === 2) el.classList.add('reveal-delay-2');
+});
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-}, { threshold: 0.1 });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.servico-card, .review-card, .galeria-item, .loc-item').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(24px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-  observer.observe(el);
-});
-
-document.addEventListener('animationend', () => {}, { once: true });
-
-// Add visible class via CSS injection
-const style = document.createElement('style');
-style.textContent = '.visible { opacity: 1 !important; transform: translateY(0) !important; }';
-document.head.appendChild(style);
+revealEls.forEach(el => observer.observe(el));
