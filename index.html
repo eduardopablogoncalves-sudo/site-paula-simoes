@@ -21,7 +21,7 @@
         <a href="#servicos">Serviços</a>
         <a href="#galeria">Galeria</a>
         <a href="#opiniones">Opiniões</a>
-        <a href="#marcacao" class="nav-cta">Marcar Agora</a>
+        <a href="#marcacao" class="nav-cta">Reservar</a>
       </nav>
       <button class="menu-toggle" id="menuToggle">
         <span></span><span></span><span></span>
@@ -37,7 +37,7 @@
       <h1>O seu cabelo,<br/><em>a nossa arte</em></h1>
       <p class="hero-lead">Profissionais apaixonadas que transformam o seu cabelo com técnica, cuidado e dedicação exclusiva a cada cliente.</p>
       <div class="hero-actions">
-        <a href="#marcacao" class="btn-primary">Marcar Consulta</a>
+        <a href="#marcacao" class="btn-primary">Marcar o meu cabelo</a>
         <a href="#galeria" class="btn-ghost">Ver Trabalhos</a>
       </div>
     </div>
@@ -247,7 +247,7 @@
     <div class="wrap marcacao-wrap">
       <div class="marcacao-left">
         <p class="label label--light">Reservas</p>
-        <h2>Marque a sua<br/>consulta</h2>
+        <h2>Marque o seu<br/>cabelo</h2>
         <p>Preencha o formulário e entraremos em contacto para confirmar a data e hora. Rápido e sem complicações.</p>
         <div class="contactos">
           <a href="tel:239716898" class="contacto-btn">
@@ -267,51 +267,77 @@
       </div>
 
       <div class="marcacao-right">
-        <form id="bookingForm" class="booking-form">
-          <h3>Pedido de marcação</h3>
+        <div class="booking-form" id="bookingForm">
 
-          <div class="field">
-            <label>O seu nome</label>
-            <input type="text" name="nome" placeholder="Nome completo" required/>
-          </div>
-
-          <div class="field">
-            <label>Telefone / WhatsApp</label>
-            <input type="tel" name="telefone" placeholder="9XX XXX XXX" required/>
-          </div>
-
-          <div class="field">
-            <label>Serviço pretendido</label>
-            <div class="services-picker" id="servicesPicker">
-              <button type="button" class="service-chip" data-service="Corte">Corte</button>
-              <button type="button" class="service-chip" data-service="Coloração">Coloração</button>
-              <button type="button" class="service-chip" data-service="Balayage">Balayage</button>
-              <button type="button" class="service-chip" data-service="Brushing">Brushing</button>
-              <button type="button" class="service-chip" data-service="Keratina">Keratina</button>
-              <button type="button" class="service-chip" data-service="Penteado">Penteado</button>
-              <button type="button" class="service-chip" data-service="Hidratação">Hidratação</button>
-              <button type="button" class="service-chip" data-service="Outro">Outro</button>
+          <!-- STEP 1: Dados -->
+          <div class="step" id="step1">
+            <div class="step-header">
+              <span class="step-pill">1 de 3</span>
+              <h3>Os seus dados</h3>
             </div>
-            <input type="hidden" name="servico" id="servicoHidden"/>
+            <div class="field">
+              <label>Nome completo</label>
+              <input type="text" id="inputNome" placeholder="Como quer ser chamada?" required/>
+            </div>
+            <div class="field">
+              <label>Telefone / WhatsApp</label>
+              <input type="tel" id="inputTel" placeholder="9XX XXX XXX" required/>
+            </div>
+            <div class="field">
+              <label>Serviço pretendido</label>
+              <div class="services-picker" id="servicesPicker">
+                <button type="button" class="service-chip" data-service="Corte">Corte</button>
+                <button type="button" class="service-chip" data-service="Coloração">Coloração</button>
+                <button type="button" class="service-chip" data-service="Balayage">Balayage</button>
+                <button type="button" class="service-chip" data-service="Brushing">Brushing</button>
+                <button type="button" class="service-chip" data-service="Keratina">Keratina</button>
+                <button type="button" class="service-chip" data-service="Penteado">Penteado</button>
+                <button type="button" class="service-chip" data-service="Hidratação">Hidratação</button>
+                <button type="button" class="service-chip" data-service="Outro">Outro</button>
+              </div>
+            </div>
+            <button class="btn-submit" id="btnStep1">
+              Escolher dia e hora
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
           </div>
 
-          <div class="field">
-            <label>Quando prefere? <span class="optional">(opcional)</span></label>
-            <input type="date" name="data" id="dataField"/>
+          <!-- STEP 2: Data + Slots -->
+          <div class="step hidden" id="step2">
+            <div class="step-header">
+              <button class="btn-back" id="btnBack1">← Voltar</button>
+              <span class="step-pill">2 de 3</span>
+              <h3>Escolha o dia</h3>
+            </div>
+            <div class="field">
+              <label>Data</label>
+              <input type="date" id="dataField"/>
+            </div>
+            <div class="slots-section" id="slotsSection" style="display:none">
+              <label class="field-label">Horários disponíveis</label>
+              <div class="slots-grid" id="slotsGrid"></div>
+              <p class="slots-legend"><span class="dot dot--free"></span>Disponível &nbsp; <span class="dot dot--busy"></span>Ocupado</p>
+            </div>
+            <button class="btn-submit" id="btnStep2" disabled>
+              Confirmar marcação
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
           </div>
 
-          <button type="submit" class="btn-submit" id="submitBtn">
-            Enviar pedido
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <p class="form-note">Entraremos em contacto em até 2 horas para confirmar.</p>
-        </form>
+          <!-- STEP 3: Confirmação -->
+          <div class="step hidden" id="step3">
+            <div class="booking-success">
+              <div class="success-icon">✓</div>
+              <h3>Marcação registada!</h3>
+              <div class="booking-summary" id="bookingSummary"></div>
+              <p class="form-note" style="margin-top:12px">Entraremos em contacto para confirmar. O horário foi reservado.</p>
+              <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+                <a href="tel:239716898" class="btn-primary">Ligar agora</a>
+                <button class="btn-ghost-dark" id="btnNovasMarcacoes">Nova marcação</button>
+              </div>
+            </div>
+          </div>
 
-        <div class="booking-success" id="bookingSuccess">
-          <div class="success-icon">✓</div>
-          <h3>Pedido enviado!</h3>
-          <p>Obrigada pelo contacto. Entraremos em contacto brevemente para confirmar a sua marcação.</p>
-          <a href="tel:239716898" class="btn-primary">Ligar agora</a>
         </div>
       </div>
     </div>
